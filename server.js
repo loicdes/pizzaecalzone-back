@@ -30,6 +30,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();})
   .get('/dashboard', DASHBOARD.getData)
+  .get('/commandes', COMMANDE.recupererCommandes)
   .post('/commande', COMMANDE.creerCommande)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
   .setTimeout(10000)
